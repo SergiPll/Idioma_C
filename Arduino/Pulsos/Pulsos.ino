@@ -17,12 +17,12 @@ void setup() {
 void loop() {
 
     
-    for (int PWM_duty = 0; PWM_duty < 1100; PWM_duty++) 
+    for (int PWM_duty = 0; PWM_duty < 1400; (PWM_duty += 2)) 
     {
       escribir(PWM_duty);
     }
     delay(1);
-    for (int PWM_duty = 1100; PWM_duty >= 0; PWM_duty--) 
+    for (int PWM_duty = 1100; PWM_duty >= 0; (PWM_duty -= 2)) 
     {
       escribir(PWM_duty);
     }
@@ -32,5 +32,5 @@ void loop() {
 
 void escribir(int PWM_duty) {
     analogWrite(LED_PIN, PWM_duty);
-    delay(2);
+    delay(1);
 }
